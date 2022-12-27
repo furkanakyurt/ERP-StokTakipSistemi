@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DaimaProje2.Models.UrunModel>
+
+@{
+    ViewBag.Title = "UrunIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<br />
+<div id="layoutSidenav_content">
+    <main>
+        
+        <div class="card-body">
+            <table id="datatablesSimple">
+                @*<table class="table table-bordered table-hover">*@
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UrunNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UrunAdi)
+                    </th>
+
+                    <th>
+                        @Html.Label(" Düzenle")
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UrunNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UrunAdi)
+                        </td>
+                         <td>
+                            @Html.ActionLink("Düzenle", "UrunEY", new { id = item.UrunNo }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Sil", "UrunDelete", new { id = item.UrunNo }, new { @class = "btn btn-danger" })
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+            <div class="col col-md-12" style="display: flex; justify-content: flex-end">
+                @Html.ActionLink("Ürün Ekle", "UrunEY", null, new { @class = "btn btn-info" })
+            </div>
+
+        </div>
+    </main>
+</div>
+

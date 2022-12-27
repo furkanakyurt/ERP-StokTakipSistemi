@@ -1,0 +1,47 @@
+﻿@model DaimaProje2.Models.StokModel2
+
+@{
+    ViewBag.Title = "StokKritikBelirle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="margin-left:100px">Stok Kritik Seviye Belirle</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <br />
+        <div class="container">
+            <div class="row" style="margin-left:-330px">
+                <div class="col col-md-3">
+                    <div class="form-group">
+                        <label> Kritik Seviyeyi Giriniz </label>
+                        <input type="text" name="kritikseviye" class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <br />>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" style="margin-left:34px" onclick="" />
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
